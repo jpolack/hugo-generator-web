@@ -8,15 +8,16 @@ import { createStore } from 'redux';
 import reducers from './_reducers';
 import middlewares from './_middlewares';
 
+import Home from './Home';
 
-let oldState = JSON.parse(localStorage.getItem('HUGO-CMS-state'));
+
+let oldState = JSON.parse(localStorage.getItem('HUGO-Generator-state'));
 
 if (oldState) {
   console.log('Reloaded old state');
 } else {
   oldState = {
-    authenticationState: undefined,
-    loadState: undefined,
+    generatorState: undefined,
   };
 }
 

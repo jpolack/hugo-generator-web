@@ -3,9 +3,11 @@ const express = require('express');
 const history = require('connect-history-api-fallback');
 
 const appBuilder = require('./app');
+const generator = require('./Generator');
 
 const app = express();
 
+app.get('/generate', generator.generate);
 app.use(history());
 
 if (process.env.NODE_ENV !== 'production') {

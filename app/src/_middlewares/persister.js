@@ -1,6 +1,6 @@
 const customMiddleWare = (store) => (next) => (action) => {
   const state = store.getState();
-  localStorage.setItem('HUGO-CMS-state', JSON.stringify(state));
+  localStorage.setItem('HUGO-Generator-state', JSON.stringify(state));
 
   next(action);
 };
