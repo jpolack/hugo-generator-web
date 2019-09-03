@@ -1,0 +1,52 @@
+{
+  "name": "hugo-generator",
+  "version": "0.1.0",
+  "private": true,
+  "main": "server/index.js",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "@material-ui/core": "^4.3.2",
+    "@material-ui/styles": "^4.3.3",
+    "base-64": "^0.1.0",
+    "connect-history-api-fallback": "^1.6.0",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "node-fetch": "^2.6.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4",
+    "utf8": "^3.0.0"
+  },
+  "scripts": {
+    "start": "node .",
+    "build": "npx webpack -p --config=./app/webpack.config.js",
+    "test_unit": "npx jest",
+    "test": "npm run lint && npm run test_unit",
+    "lint": "eslint --max-warnings=10 '**/*.js' '**/*.jsx'"
+  },
+  "devDependencies": {
+    "webpack": "^4.39.2",
+    "webpack-dev-middleware": "^3.7.0",
+    "redux-devtools-extension": "^2.13.8",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@types/jest": "^24.0.18",
+    "babel-loader": "^8.0.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.9.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "jest": "^24.9.0",
+    "webpack-cli": "^3.3.6"
+  }
+}
