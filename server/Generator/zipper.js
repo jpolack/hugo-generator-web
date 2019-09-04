@@ -1,7 +1,7 @@
 const fs = require('fs');
 const archiver = require('archiver');
 
-function zip(siteName) {
+function zip(zippablePath, siteName) {
   return new Promise((resolve, reject) => {
     const output = fs.createWriteStream(`tmp/${siteName}.zip`);
     const archive = archiver('zip', {
@@ -30,7 +30,7 @@ function zip(siteName) {
 
     archive.pipe(output);
 
-    archive.directory(`tmp/${siteName}`, siteName);
+    archive.directory(zippablePath, siteName);
 
     archive.finalize();
   });

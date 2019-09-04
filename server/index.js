@@ -7,7 +7,7 @@ const generator = require('./Generator');
 
 const app = express();
 
-app.get('/generate', generator.generate);
+app.get('/generate/:mode', generator.generate);
 app.use(history());
 
 if (process.env.NODE_ENV !== 'production') {

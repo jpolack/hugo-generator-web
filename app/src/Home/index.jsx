@@ -11,10 +11,17 @@ function HomeView() {
         <Box p={4}>
           <Typography variant="h4" color="primary">Generate your Hugo webpage with one click</Typography>
         </Box>
-        <Box>
-          <Button color="primary" variant="outlined">
-            <Link href="/generate" target="_blank" style={{ textDecoration: 'none' }}>Download now</Link>
-          </Button>
+        <Box display="flex">
+          <Box p={4}>
+            <Button color="primary" variant="outlined">
+              <Link href="/generate/dev" target="_blank" style={{ textDecoration: 'none' }}>Download for development</Link>
+            </Button>
+          </Box>
+          <Box p={4}>
+            <Button color="primary" variant="outlined">
+              <Link href="/generate/prod" target="_blank" style={{ textDecoration: 'none' }}>Download for production</Link>
+            </Button>
+          </Box>
         </Box>
       </Box>
     </Box>
