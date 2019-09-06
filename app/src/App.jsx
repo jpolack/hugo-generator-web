@@ -4,11 +4,18 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import ReactGA from 'react-ga';
+
 
 import reducers from './_reducers';
 import middlewares from './_middlewares';
 
 import Home from './Home';
+
+
+if (NODE_ENV === 'production') {
+  ReactGA.initialize('UA-146816445-1');
+}
 
 
 let oldState = JSON.parse(localStorage.getItem('HUGO-Generator-state'));
