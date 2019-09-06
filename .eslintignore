@@ -2,3 +2,4 @@ serviceWorker.js
 webpack.config.js
 node_modules
 **/dist
+hugo-examplePage
