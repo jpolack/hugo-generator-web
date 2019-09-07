@@ -2,13 +2,10 @@
 const express = require('express');
 const history = require('connect-history-api-fallback');
 
-const appBuilder = require('./app');
+const appBuilder = require('./appBuilder');
 const generator = require('./Generator');
-const hugoChecker = require('./HugoChecker');
 
 (async () => {
-  await hugoChecker.check();
-
   const app = express();
 
   app.get('/generate/:mode', generator.generate);
