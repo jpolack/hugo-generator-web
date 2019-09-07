@@ -4,18 +4,23 @@ const history = require('connect-history-api-fallback');
 
 const appBuilder = require('./app');
 const generator = require('./Generator');
+const hugoChecker = require('./HugoChecker');
 
-const app = express();
+(async () => {
+  await hugoChecker.check();
 
-app.get('/generate/:mode', generator.generate);
-app.use(history());
+  const app = express();
 
-if (process.env.NODE_ENV !== 'production') {
-  console.log('adding dev route');
-  app.use('/', appBuilder());
-} else {
-  console.log('adding prod route');
-  app.use('/', express.static(`${__dirname}/../app/dist`));
-}
+  app.get('/generate/:mode', generator.generate);
+  app.use(history());
 
-app.listen(process.env.PORT || 3000);
+  if (process.env.NODE_ENV !== 'production') {
+    console.log('adding dev route');
+    app.use('/', appBuilder());
+  } else {
+    console.log('adding prod route');
+    app.use('/', express.static(`${__dirname}/../app/dist`));
+  }
+
+  app.listen(process.env.PORT || 3000);
+})();
