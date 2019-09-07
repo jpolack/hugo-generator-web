@@ -3,7 +3,7 @@ FROM node:alpine
 WORKDIR /code
 
 ENV HUGO_VERSION=0.58.0
-ENV FILE_NAME=hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+ENV FILE_NAME=hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
 ENV HUGO_PACKAGE=https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${FILE_NAME}
 
 RUN apk --no-cache add curl
